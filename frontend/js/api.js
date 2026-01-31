@@ -1,16 +1,16 @@
 // API Base URL - Change this if your backend is hosted elsewhere
-const API_URL = "http://localhost:5000/api/tasks";
-
 // API Service - Handles all HTTP requests
+// Uses CONFIG.API_URL from config.js
+
 const api = {
   async getAllTasks() {
-    const response = await fetch(API_URL);
+    const response = await fetch(CONFIG.API_URL);
     if (!response.ok) throw new Error("Failed to fetch tasks");
     return response.json();
   },
 
   async createTask(taskData) {
-    const response = await fetch(API_URL, {
+    const response = await fetch(CONFIG.API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(taskData),
@@ -20,7 +20,7 @@ const api = {
   },
 
   async updateTask(id, taskData) {
-    const response = await fetch(`${API_URL}/${id}`, {
+    const response = await fetch(`${CONFIG.API_URL}/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(taskData),
@@ -30,7 +30,7 @@ const api = {
   },
 
   async deleteTask(id) {
-    const response = await fetch(`${API_URL}/${id}`, {
+    const response = await fetch(`${CONFIG.API_URL}/${id}`, {
       method: "DELETE",
     });
     if (!response.ok) throw new Error("Failed to delete task");
