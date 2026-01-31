@@ -1,0 +1,42 @@
+/* ===== Tablet Breakpoint ===== */
+@media (max-width: 768px) {
+  .stats-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .task-card {
+    flex-wrap: wrap;
+  }
+  
+  .task-actions {
+    width: 100%;
+    margin-top: 12px;
+    justify-content: flex-end;
+  }
+}
+
+/* ===== Mobile Breakpoint ===== */
+@media (max-width: 480px) {
+  .header-content {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+  
+  .stats-section {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .stat-card {
+    padding: 16px;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  
+  .filter-buttons {
+    justify-content: center;
+  }
+}
